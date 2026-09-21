@@ -14,7 +14,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@RequestMapping("/usuarios")
+//@RequestMapping("/usuarios")
+@RequestMapping("/auth")
 @RequiredArgsConstructor
 public class UsuarioController {
 

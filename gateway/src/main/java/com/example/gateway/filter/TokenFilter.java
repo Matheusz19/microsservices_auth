@@ -24,8 +24,10 @@ public class TokenFilter implements GlobalFilter, Ordered {
     // As unicas rotas que passam sem token. Sem elas ninguem consegue se
     // cadastrar nem pegar o primeiro token -- o sistema tranca por fora.
     private static final List<String> LIVRES = List.of(
-            "/auth-service/usuarios/login",
-            "/auth-service/usuarios");
+//            "/auth-service/usuarios/login",
+//            "/auth-service/usuarios");
+            "/auth-service/auth/login",
+            "/auth-service/auth");
 
     private final SecretKey chave;
 
