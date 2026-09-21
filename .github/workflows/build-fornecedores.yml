@@ -1,0 +1,29 @@
+name: Build Fornecedores Service
+
+on:
+  push:
+    paths:
+      - 'fornecedores-service/**'
+      - '.github/workflows/build-fornecedores.yml'
+  pull_request:
+    paths:
+      - 'fornecedores-service/**'
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout do código
+        uses: actions/checkout@v4
+
+      - name: Configurar Java 17
+        uses: actions/setup-java@v4
+        with:
+          java-version: '17'
+          distribution: 'temurin'
+          cache: maven
+
+      - name: Compilar Fornecedores Service
+        working-directory: ./fornecedores-service
+        run: mvn clean package -DskipTests
